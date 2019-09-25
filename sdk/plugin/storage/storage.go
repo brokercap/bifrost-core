@@ -2,7 +2,7 @@ package storage
 
 import (
 	"sync"
-	"github.com/brokercap/bifrost_core/sdk/plugin/driver"
+	"github.com/brokercap/bifrost-core/sdk/plugin/driver"
 	"log"
 	"encoding/json"
 )

@@ -1,7 +1,7 @@
 package pluginTestData
 
 import (
-	"github.com/brokercap/bifrost_core/sdk/plugin/driver"
+	"github.com/brokercap/bifrost-core/sdk/plugin/driver"
 	"math/rand"
 	"time"
 	"fmt"

@@ -1,7 +1,7 @@
 package http_manager
 
 import (
-	"github.com/brokercap/bifrost_core/xgo"
+	"github.com/brokercap/bifrost-core/xgo"
 	"os"
 	"net/http"
 	"strings"

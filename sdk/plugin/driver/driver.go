@@ -9,7 +9,7 @@ import (
 	"encoding/json"
 )
 
-const API_VERSION  = "v1.1.0"
+const API_VERSION  = "v1.2.0"
 
 func init(){}
 
@@ -27,7 +27,7 @@ type PluginDataType struct {
 //这个用于bifrost 调用 插件之前 判断一下插件的一些基本信息，方便后续扩展
 //至于里面的参数生效情况，取决于bifrost server
 type PluginParam struct {
-	BatchCommit bool	//true 批量操作同一个表的数据，是否需要
+	BatchCommit bool	//true 当同一个事件,多条数据的时候 rows 里的数据就多条一次提交给插件,不再单独拆出来
 }
 
 
@@ -79,7 +79,7 @@ var (
 	drivers   = make(map[string]DriverStructure)
 )
 
-func Register(name string, driver Driver,version string,bifrost_version string) {
+func Register(name string, driver Driver,version string) {
 	defer func() {
 		if err := recover();err!=nil{
 			log.Println(err)
@@ -91,11 +91,10 @@ func Register(name string, driver Driver,version string,bifrost_version string) 
 		panic("Register driver is nil")
 	}
 	if _, ok := drivers[name]; ok {
-		panic("Register called twice for driver " + name)
+		panic("Register called twice for driver: " + name)
 	}
 	drivers[name] = DriverStructure{
 		Version:version,
-		BifrostVersion:bifrost_version,
 		Error:"",
 		ExampleConnUri:driver.GetUriExample(),
 		driver:driver,

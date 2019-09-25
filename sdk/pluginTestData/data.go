@@ -1,7 +1,7 @@
 package pluginTestData
 
 import (
-	pluginDriver "github.com/brokercap/bifrost_core/sdk/plugin/driver"
+	pluginDriver "github.com/brokercap/bifrost-core/sdk/plugin/driver"
 	"time"
 	"encoding/json"
 	"math/rand"

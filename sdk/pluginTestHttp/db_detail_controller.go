@@ -3,8 +3,8 @@ package http_manager
 import (
 	"net/http"
 	"encoding/json"
-	pluginDriver "github.com/brokercap/bifrost_core/sdk/plugin/driver"
-	toserver "github.com/brokercap/bifrost_core/sdk/plugin/storage"
+	pluginDriver "github.com/brokercap/bifrost-core/sdk/plugin/driver"
+	toserver "github.com/brokercap/bifrost-core/sdk/plugin/storage"
 
 	"html/template"
 )

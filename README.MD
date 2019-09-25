@@ -1,5 +1,6 @@
-#### bifrost_core
+#### bifrost-core
 
-bifrost server 项目引用这个包，并且 插件引用这个包
+bifrost-server 项目会引用这个包,并且 bifrost 各个插件也会引用这个包
 
-bifrost_core 提供 插件接口，及数据测试等功能
+bifrost-core 提供各种接口由各插件进行实现
+
