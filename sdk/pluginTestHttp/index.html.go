@@ -2,6 +2,7 @@ package http_manager
 
 var IndexHtml = `
 
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +10,7 @@ var IndexHtml = `
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mysqlTest - Detail - Bifrost</title>
+    <title>test41 - Detail - Bifrost</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
     <link href="/css/style.min862f.css?v=4.1.0" rel="stylesheet">
@@ -102,22 +103,80 @@ $(function(){
 
 <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
 <div >
-    <input type="hidden" value="mysqlTest" id="dbname" />
+    <input type="hidden" value="test41" id="dbname" />
     <div class="row">
         <div class="col-sm-2" id="MyWebLeft_1">
 
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>mysqlTest - Schema List</h5>
+                    <h5>test41 - Schema List</h5>
                 </div>
                 <div class="ibox-content">
                     <div class="list-group" id="DatabaseListContair">
                     
-                    {{range $i, $v := .DataBaseList}}
-                        <a class="list-group-item" id="Schema-{{$v}}">
-                            <h3 class="list-group-item-heading">{{$v}}</h3>
+                        <a class="list-group-item" id="Schema-information_schema">
+                            <h3 class="list-group-item-heading">information_schema</h3>
                         </a>
-                    {{end}}
+                    
+                        <a class="list-group-item" id="Schema-affiliate">
+                            <h3 class="list-group-item-heading">affiliate</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-affiliate_no_key">
+                            <h3 class="list-group-item-heading">affiliate_no_key</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-bifrost_test">
+                            <h3 class="list-group-item-heading">bifrost_test</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-edts_topic">
+                            <h3 class="list-group-item-heading">edts_topic</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-eegia">
+                            <h3 class="list-group-item-heading">eegia</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-jira">
+                            <h3 class="list-group-item-heading">jira</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-lua">
+                            <h3 class="list-group-item-heading">lua</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-my_db">
+                            <h3 class="list-group-item-heading">my_db</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-mysql">
+                            <h3 class="list-group-item-heading">mysql</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-otter_stat">
+                            <h3 class="list-group-item-heading">otter_stat</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-performance_schema">
+                            <h3 class="list-group-item-heading">performance_schema</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-retl">
+                            <h3 class="list-group-item-heading">retl</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-test">
+                            <h3 class="list-group-item-heading">test</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-testdbcreate">
+                            <h3 class="list-group-item-heading">testdbcreate</h3>
+                        </a>
+                    
+                        <a class="list-group-item" id="Schema-tsd-db">
+                            <h3 class="list-group-item-heading">tsd-db</h3>
+                        </a>
                     
                     </div>
 
@@ -135,8 +194,10 @@ $(function(){
                     .tableDiv{display:block; width:100%; height: 25px; position: relative}
                     .tableDiv .left{ display:block; float:left; width:79%; line-height:100%;word-wrap: break-word;  }
                     .tableDiv .right{ display:block; position: absolute; right: -10px ;top: 0px; width:78px; line-height: 25px;}
+                    .tableDiv .right1{ display:block; position: absolute; right: 48px ;top: 0px; width:78px; line-height: 25px;}
                     .tableDiv .right .button{ float: left;}
                     .tableDiv .right .check_input{ float: left;margin-left: 8px; margin-top: 2px}
+                    .tableDiv .right1 .button{ float: left;}
                 </style>
                 <div class="ibox-content">
                     <div class="list-group" id="TableListContair">
@@ -206,9 +267,9 @@ $(function(){
                                 <div class="col-sm-9">
                                     <select class="form-control" name="addToServerKey" id="addToServerKey">
                                     
-                                    {{range $k,$v := .ToServerList}}
-                                        <option value="{{$k}}" pluginName="{{$v.PluginName}}" pluginVersion="{{$v.PluginVersion}}">{{$v.PluginName}} -- {{$k}}</option>
-                                    {{end}}
+                                        <option value="blackholeTest" pluginName="blackhole" pluginVersion="v1.1.0">blackhole -- blackholeTest</option>
+                                    
+                                        <option value="ckTest" pluginName="clickhouse" pluginVersion="v1.1.0-rc.01">clickhouse -- ckTest</option>
                                     
                                     </select>
                                     <span class="help-block m-b-none"></span>
@@ -306,7 +367,7 @@ $(function(){
                         <tr>
                             <td align="right" height="50" width="20%">DB : </td>
                             <td style="text-indent:10px" >
-                                <input type="text" name="dbname" id="addTableDbName" class="form-control" placeholder="Database" value="mysqlTest" disabled>
+                                <input type="text" name="dbname" id="addTableDbName" class="form-control" placeholder="Database" value="test41" disabled>
                             </td>
                         </tr>
 
@@ -360,7 +421,7 @@ $(function(){
                         <tr>
                             <td align="right" height="50" width="20%">DB : </td>
                             <td style="text-indent:10px" >
-                                <input type="text" name="dbname" id="addHisotryDbName" class="form-control" placeholder="Database" value="mysqlTest" disabled>
+                                <input type="text" name="dbname" id="addHisotryDbName" class="form-control" placeholder="Database" value="test41" disabled>
                             </td>
                         </tr>
 
@@ -416,7 +477,7 @@ $(function(){
     <script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
     <script type="text/javascript">
 
-        var dbname = "mysqlTest";
+        var dbname = "test41";
         var OnFoucsInputId = "";
         var tableDataTypeMap = {};
 
@@ -548,9 +609,9 @@ $(function(){
                             return false;
                         }
                         if(data.status){
-                            html = '<button data-toggle="button" class="btn-danger btn-sm" type="button" onClick="DelTable(this)">DEL</button>';
-                            $("#" + schema_name + "-" + table_name + " .right .button").html(html);
-                            $("#" + schema_name + "-" + table_name + " .right .input input").prop("checked",false);
+                            html = '<button data-toggle="button" class="btn-danger btn-sm" type="button" onClick="DelTable(\''+table_name+'\')">DEL</button>';
+                            $("#" + schema_name + "_-" + table_name + " .right .button").html(html);
+                            $("#" + schema_name + "_-" + table_name + " .right .input input").prop("checked",false);
                         }
                         batchDelOrAddTableResultFun(table_name +" ADD Result:"+data.msg,1);
                     }
@@ -590,7 +651,7 @@ $(function(){
                         }
                         if (data.status) {
                             html = '<button data-toggle="button" class="btn-warning btn-sm" type="button" onClick="showAddTable(\'' + table_name + '\')">ADD</button>';
-                            $("#" + schema_name + "-" + table_name + " .right .button").html(html);
+                            $("#" + schema_name + "_-" + table_name + " .right .button").html(html);
                         }
                         batchDelOrAddTableResultFun(table_name +" DEL Result:"+data.msg,1);
                     }
@@ -615,7 +676,7 @@ $(function(){
         }
 
         function GetTableToServerList(schema_name,table_name){
-            var key = schema_name+"-"+table_name;
+            var key = schema_name+"_-"+table_name;
             if ($("#"+key+" .right button").text() == "ADD"){
                 table_check_input(key);
                 return  false;
@@ -661,6 +722,9 @@ $(function(){
                             others += "<p title=\"最后一个成功处理的位点\">BinlogFileNum: "+v.BinlogFileNum+"</p><p>BinlogPos: "+v.BinlogPosition+"</p>";
                             others += "<p>LastBinlogFileNum: "+v.LastBinlogFileNum+"</p>";
                             others += "<p title=\"队列最后一个位点\">LastBinlogPosition: "+v.LastBinlogPosition+"</p>";
+                            if ("QueueMsgCount" in v) {
+                                others += "<p title=\"已解析出来的数据,有多少条消息堆积在队列中待同步\">QueueMsgCount: " + v.QueueMsgCount + "</p>";
+                            }
                             e.push({
                                 sliceid:index+"/"+v.ToServerID,
                                 PluginName:v.PluginName,
@@ -709,7 +773,7 @@ $(function(){
         }
         var TableMap = new Map();
         function GetTableFields(schema_name,table_name){
-            var key = schema_name+"-"+table_name;
+            var key = schema_name+"_-"+table_name;
             if (!TableMap.has(key) || TableMap.get(key) == undefined){
                 var url = '/db/tablefields';
                 $.post(url,
@@ -752,14 +816,19 @@ $(function(){
             var url = "/db/tablelist";
             var showTableList = function(data){
                 $("#TableListContair").html("");
-                $.each(data,function(index,v){
+                $.each(data,function(index,v) {
                     var html = "";
                     var title = "";
-                    if (v.ChannelName != ""){
-                        title = " title='Bind Channel : "+v.ChannelName+"' ";
+                    if (v.ChannelName != "") {
+                        title = " title='Bind Channel : " + v.ChannelName + "' ";
                     }
-                    html += '<a class="list-group-item"><div class="tableDiv" title="'+v.TableName+'" id="'+schema_name+'-'+v.TableName+'">';
-                    html +=	'<h5 class="left" '+title+' onClick="GetTableToServerList(\''+schema_name+'\',\''+v.TableName+'\')">'+v.TableName+'</h5>';
+                    html += '<a class="list-group-item"><div class="tableDiv" title="' + v.TableName + '" id="' + schema_name + '_-' + v.TableName + '">';
+                    html += '<h5 class="left" ' + title + ' onClick="GetTableToServerList(\'' + schema_name + '\',\'' + v.TableName + '\')">' + v.TableName + '</h5>';
+                    if (v.TableType.toUpperCase().indexOf("VIEW") != -1) {
+                        html += '<div class="right1">';
+                        html += '<div class="button"><button data-toggle="button" class="btn-sm btn-success" type="button">视图</button></div>';
+                        html += '</div>';
+                    }
                     html += '<div class="right">';
                     if (v.AddStatus == false){
                         html+= '<div class="button"><button data-toggle="button" class="btn-sm btn-warning" type="button" onClick="showAddTable(\''+v.TableName+'\')">ADD</button></div>';
@@ -1024,15 +1093,31 @@ $(function(){
         function init(){
             var querySchemaName = getQueryString("schema");
             var queryTableName = getQueryString("table_name");
-            if(querySchemaName == null || queryTableName == null) {
-                return false;
+            if(querySchemaName == null) {
+                
+                $.each($("#DatabaseListContair a"),function(){
+                    var id = $(this).attr("id");
+                    if(querySchemaName != null){
+                        return;
+                    }
+                    
+                    if(id == "Schema-information_schema" || id == "Schema-mysql" || id == "Schema-performance_schema"){
+                        return
+                    }
+                    querySchemaName = id;
+                });
+                if(querySchemaName != null){
+                    showSchemaTableList(querySchemaName);
+                }
+            }else{
+                if( $("#Schema-"+querySchemaName).length <= 0){
+                    return false;
+                }
+                showSchemaTableList("Schema-"+querySchemaName);
+                if(queryTableName!=null){
+                    GetTableToServerList(querySchemaName,queryTableName);
+                }
             }
-            if( $("#Schema-"+querySchemaName).length <= 0){
-                return false;
-            }
-            showSchemaTableList("Schema-"+querySchemaName);
-            
-            GetTableToServerList(querySchemaName,queryTableName);
         }
 
         init();
